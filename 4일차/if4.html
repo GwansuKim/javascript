@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>if4</title>
+</head>
+
+<body>
+  <div id="result"></div>
+  <script>
+    let fruit = ['사과', '바나나', '키위'];
+    let checked = ['바나나', '사과']
+    for( let i = 0; i < fruit.length; i++){
+      result.innerHTML += `<input type="checkbox" ${checked.indexOf(fruit[i]) >= 0 ? "checked":""}>${fruit[i]}`
+    }
+  </script>
+</body>
+
+</html>
