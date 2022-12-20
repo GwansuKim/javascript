@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>for_sum</title>
+</head>
+
+<body>
+  <script>
+    //1부터 10까지의 합을 계산
+    //합계를 저장할 변수를 선언하고 0으로 초기화
+    let sum = 0;
+    //10까지 반복
+    sum_calc(10);
+    //합계출력
+    console.log(sum);
+
+    //1부터 100까지의 합을 계산
+    //합계 변수를 0으로 초기화
+    sum = 0;
+    //100까지 반복
+    sum_calc(100);
+    //합계출력
+    console.log(sum);
+
+    //1~num까지의 수를 더하는 함수 지정
+    function sum_calc(num) {
+      for (let i = 1; i <= num; i++) {
+        //합계변수에 수를 더함
+        sum += i;
+      }
+    }
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2525</title>
+</head>
+<body>
+  <script>
+    let pretime = prompt('현재 시각: 시간_분').split(" ");
+    let cooktime = prompt('요리 시간 : 분');
+    let time = new Date();
+    time.setHours( parseInt(pretime[0]) );
+    time.setMinutes( parseInt(pretime[1]) + parseInt(cooktime) );
+    let comhour = time.getHours();
+    let commin = time.getMinutes();
+    let comtime = comhour + ":" + commin;
+    alert(comtime);
+  </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1924</title>
+</head>
+
+<body>
+  <script>
+    let month = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30];
+    let M = prompt("월");
+    let d = prompt("일");
+    let week = ["SUN", "MON", "Tue", "Wed", "Thu", "Fri", "Sat"]
+    let sum = 0;
+    if (M < 1 || M > 12 || d < 1 || d > month[M * 1] * 1 || d > 31) {
+      console.log('오류입니다');
+    } else {
+      for (i = 1; i <= M; i++) {
+        sum += month[i - 1] * 1;
+      }
+      //console.log(sum);//
+      console.log(week[(sum + d * 1) % 7]);
+    }
+
+    /*
+    if (M == 1) {
+      console.log(week[d % 7]);
+    } else {
+      for (i = 1; i < M; i++) {
+        sum += month[i-1]*1;
+      }
+      console.log(week[(sum + d * 1) % 7]);
+    }
+    */
+  </script>
+</body>
+
+</html>

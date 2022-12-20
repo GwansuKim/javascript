@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>figure</title>
+</head>
+<body>
+  <script>
+    /* 피겨 점수 계산
+      최댓값, 최소값, 합계, 평균 */
+    /*
+      매개변수 : 배열(점수)
+      리턴 : 합계
+     */
+    function total(score){
+      let s = 0;
+      for( let i = 0; i < score.length; i++){
+        s += score[i];
+      }
+      return s;
+    }
+    /*
+      최댓값 구하기
+      매개변수 : 배열(점수)
+      리턴 : 배열 값 중 가장 큰 값  */
+    function max(score){
+      let max = score[0];
+      for( let i = 0; i < score.length; i++){
+        if(score[i]>max){
+          max = score[i];
+        }
+      }
+      return max;
+    }
+    /* 
+      최솟값 구하기
+      매개변수 : 배열(점수)
+      리턴 : 배열 값 중 가장 작은 값 */
+    function min(score){
+      let min = score[0];
+      for( let i = 0; i < score.length; i++){
+        if(score[i]<min){
+          min = score[i];
+        }
+      }
+      return min;
+    }
+    /* 
+      최댓값, 최소값을 제외하고 평균 구하기
+      매계변수 : 배열(점수)
+      리턴 : (total-max-min)/(score.length-2)*/
+    function avg(score){
+      let avg = 0;
+      avg = (total(score)-max(score)-min(score))/(score.length-2)
+      return avg;
+    }/* 
+    console.log('총점 ', total([10,8,4,9,2]))
+    console.log('최고점수', max([10,8,4,9,2]))
+    console.log('최소점수', min([10,8,4,9,2]))
+    console.log('평균점수', avg([10,8,4,9,2])) */
+    let tes_score = avg([3,2,5,1]);
+    console.log(tes_score)
+    let pcs_score = avg([2,4,4,1]);
+    console.log(pcs_score)
+  </script>
+</body>
+</html>

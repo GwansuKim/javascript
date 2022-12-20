@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    /* 등급을 입력받아서 등급 출력
+      4.0 -> "A"
+      3.5 -> "B+"
+      3.0 -> "B"
+      C
+      */
+     let score = prompt("등급을 입력하세요");  //등급입력
+     if(score >= 4){                          //4.0이상 A
+      alert("A")
+     } else if(score >= 3.5){                 //3.5이상 B+
+      alert("B+")
+     } else if(score >= 3){                   //3.0이상 B
+      alert("B")
+     } else{                                  //나머지 C
+      alert("C")
+     }
+  </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>dom2</title>
+</head>
+<body>
+  <input id="txt1"><input id="txt2">
+  <button id="addBtn1">추가1</button>
+  <button id="addBtn2">추가2</button>
+  <select id="itemList" size="10">
+    <option value="apple">사과</option>
+  </ul>
+  <script>
+    addBtn1.onclick = function(){
+    let option = document.createElement("option")  // 태그 생성
+      option.setAttribute("value", txt2.value);    //li calss = item
+      option.innerText = txt1.value;               //태그내용 변경
+      // 이벤트 지정
+      itemList.appendChild(option);                // 부모 태그에 연결
+    }
+
+    addBtn2.onclick = function(){
+      itemList.innerHTML += `<option value=${txt2.value}>${txt1.value}</option>`
+    }
+  </script>
+</body>
+</html>

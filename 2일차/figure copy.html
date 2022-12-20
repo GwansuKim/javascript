@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>figure</title>
+</head>
+
+<body>
+  <script>
+    /* 피겨 점수 계산
+      최댓값, 최소값, 합계, 평균 */
+    /*
+      매개변수 : 배열(점수)
+      리턴 : 합계
+     */
+    function Figure(score) {
+      this.score = score;
+      this.total = function() {
+        let total = 0;
+        for (let i = 0; i < score.length; i++) {
+          total += score[i];
+        }
+        this.a = total;
+        return total;
+      }
+      /*
+        최댓값 구하기
+        매개변수 : 배열(점수)
+        리턴 : 배열 값 중 가장 큰 값  */
+        this.max = function() {
+        let max = score[0];
+        for (let i = 0; i < score.length; i++) {
+          if (score[i] > max) {
+            max = score[i];
+          }
+        }
+        this.b = max;
+        return max;
+      }
+      /* 
+        최솟값 구하기
+        매개변수 : 배열(점수)
+        리턴 : 배열 값 중 가장 작은 값 */
+        this.min = function() {
+        let min = score[0];
+        for (let i = 0; i < score.length; i++) {
+          if (score[i] < min) {
+            min = score[i];
+          }
+        }
+        this.c = min;
+        return min;
+      }
+    }
+    /* 
+      최댓값, 최소값을 제외하고 평균 구하기
+      매계변수 : 배열(점수)
+      리턴 : (total-max-min)/(score.length-2)*/
+      let tes_score=[3,4,1,5];
+      let figure = new Figure(tes_score);
+      figure.total();
+      figure.max();
+      figure.min();
+      let avg = (figure.a - figure.b - figure.c) / (tes_score.length-2);
+      console.log('총점:',figure.a)
+      console.log('최고점수:',figure.b)
+      console.log('최저점수:',figure.c)
+      console.log('평균:',avg)
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <input id="txt">
+  <button id="addBtn">추가</button>
+  <button id="delBtn">삭제</button>
+  <div id="result"></div>
+  <script>
+    let fruit = new Array();  //[]
+    addBtn.onclick = function () {
+      fruit.push(txt.value);
+      result.innerText = fruit.toString();
+      txt.value = "";
+    }
+    delBtn.onclick = function () {
+      let index = fruit.indexOf(txt.value);
+      if (index >= 0) {
+        let el = fruit.splice(index, 1);
+      }
+      alert(index);
+      result.innerText = fruit.toString();
+    }
+  </script>
+</body>
+
+</html>

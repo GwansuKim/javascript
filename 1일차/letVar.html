@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    /*
+    var : 함수 범위
+    let : 중복 선언 x  <<권장
+          블록범위
+    */
+   //올해가 윤년
+   let result = 2022 % 4;
+   //요일
+   let week = 15 % 7;
+   let weekName = ['수', '목', '금', '토', '일', '월', '화'];
+   console.log(weekName[week]);
+
+   //해당월의 마지막날이 몇 일인지?
+   let month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+   //월 입력(1~12중 입력)
+   let insertMonth = prompt('월을 입력해주세요', '1~12');
+   //해당 월의 마지막 날 출력
+   console.log(insertMonth, '월은', month[insertMonth-1], '일입니다.');
+  </script>
+</body>
+</html>

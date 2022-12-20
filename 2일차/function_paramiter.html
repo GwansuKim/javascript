@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>funtion_paramiter</title>
+</head>
+<body>
+  <script>
+    /*두 수의 합을 계산하는 함수*/
+    function tw_sum(num1 = 10, num2 = 20) {
+      let sum = num1 + num2;
+      return sum
+    }
+    console.log(tw_sum(10, 15, 100))
+    console.log(tw_sum(10, 15))
+    console.log(tw_sum(100))
+    console.log(tw_sum())
+  </script>
+</body>
+</html>

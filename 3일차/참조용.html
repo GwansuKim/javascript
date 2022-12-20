@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>select 태그</title>
+  <style>
+    #result {
+      border: 1px solid blue;
+      width: 300px;
+      height: 100px;
+      margin-top: 30px;
+    }
+    select {
+      margin-bottom: 30px;
+      width: 300px;
+    }
+    #btn {
+      width: 300px;
+    }
+  </style>
+  <script>
+    window.addEventListener("load", function() {
+      //확인버튼이벤트
+      btn.addEventListener("click", function() {
+        //선택과목 수와 선택과목명을 div에 출력(다중선택이 가능함)
+        let option = document.querySelectorAll("#subject option:checked");
+        
+        console.log(option.length);
+        // 하나라도 option(Array)에 값이 없으면 걸리겠죠?
+        if(option.length === 0) {
+          alert("선택 한 과목이 없습니다.");
+          return;
+        }
+
+        // 하나라도 option(Array)에 값이 있으면 if가 안걸리고 여기로 고스란히 오심
+        let text_array = [];
+        for(let i = 0; i < option.length; i++) {
+          text_array.push(option[i].value);
+        }
+        
+        document.getElementById("result").innerHTML = `
+          선택과목 수 : ${text_array.length}
+          <br>
+          선택과목 : ${text_array.join(", ")}
+        `;
+      });
+    });
+  </script>
+</head>
+<body>
+  <select id="subject" multiple="multiple" size="5">
+    <option value="자바">자바</option>
+    <option value="JSP">JSP</option>
+    <option value="스프링">스프링</option>
+  </select><br>
+  <button id="btn">확인</button>
+  <div id="result"></div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2884</title>
+</head>
+<body>
+  <script>
+    let hour = prompt("시간");
+    let minute = prompt("분");
+    if( hour == null || minute == null || hour*1 < 0 || hour*1 > 24 || minute*1 < 0 || minute*1 >= 60){
+      console.log('오류입니다');
+    } else if(minute*1 >= 45){
+      console.log(hour, '시', (minute-45), '분');
+    } else if(hour*1 == 0){
+      console.log('23', '시', (minute*1)+15, '분');
+    } else {
+      console.log((hour*1)-1, '시', (minute*1)+15, '분');
+    }
+  </script>
+</body>
+</html>

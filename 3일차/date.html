@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>date</title>
+</head>
+<body>
+  <div id="result"></div>
+  <script>
+    let input1 = prompt('종료 날짜 : 연 월 일').split(" ");
+    let input2 = prompt('시작 날짜 : 연 월 일').split(" ");
+    let now = new Date(input1[0], input1[1], input1[2]);
+    let firstday = new Date(input2[0], input2[1], input2[2]);
+
+    let toNow = now.getTime();
+    let toFirst = firstday.getTime();
+    let time = 0;
+    
+    time = toNow - toFirst;
+
+    time = Math.round(time/(1000*60*60*24));
+    result.innerHTML = time + '<BR>';
+    result.innerText += time;
+  </script>
+</body>
+</html>

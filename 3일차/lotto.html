@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>lotto</title>
+</head>
+<body>
+  <div id="result"></div>
+  <script>
+    let arr = new Array();
+    for( let i = 0; i < 6; i++){
+      arr[i] = Math.floor(Math.random() * 45)+1;
+      if(arr.indexOf(arr[i]) != i){
+        arr.splice(i, 1);
+        i -= 1;
+      }
+    }
+    result.innerText = arr.sort( (a,b) => a-b );
+  </script>
+</body>
+</html>

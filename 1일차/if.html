@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let score = prompt("점수입력");
+    //점수가 60점 이상이면 "합격" 출력
+    if(score >= 60){
+      alert("합격");
+      //점수가 80점 이상이면 "우수" 출력
+      if(score >= 80){
+        alert("우수")
+      //70>=점수>=60 이면 "보통" 출력
+      } else{
+        alert("보통")
+      }
+      //60=점수라면 "불합격", "분발" 출력
+    } else{
+      alert("불합격")
+      alert("분발")
+    }
+  </script>
+</body>
+</html>

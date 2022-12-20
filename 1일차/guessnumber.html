@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>숫자맞추기</title>
+</head>
+
+<body>
+  <script>
+    /*
+      작성일자 : 2022
+      작성자 : 김관수
+      내용 : 숫자맞추기게임
+    */
+    //임의의 수 생성
+    let num = Math.floor(Math.random()*10) + 1;
+    let turn = 0;
+    //맞을때까지 반복
+    while (true) {
+      //사용자가 숫자 입력
+      let guess = prompt("1~10 수를 입력 (0은 종료)", "5")
+      turn++;
+      if (guess == 0) {
+        alert("게임중지")
+        break;
+      }
+      if (turn >= 5) {              //턴수가 3회 이상
+        alert("게임오버")
+        break;
+      }
+      if (num == guess) {           // 정답이면 종료
+        alert("정답")
+        break;
+      } else if (num > guess) {     //작으면 작다고 출력하고 다시 입력으로
+        alert("작다")
+      } else {                       //크다면 크다고 출력하고 다시 입력으로
+        alert("크다")
+      }
+    }
+  </script>
+</body>
+
+</html>
