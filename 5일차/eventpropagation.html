@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>eventpropagation</title>
+  <style>
+    div{
+      margin: 20px;
+      border: 1px solid green;
+    }
+  </style>
+</head>
+<body>
+  <div id="grand">grand
+    <div id="parent">parent
+      <div id="child">child</div>
+    </div>
+  </div>
+  <script>
+    let grand = document.getElementById("grand")
+    let parent = document.getElementById("parent")
+    let child = document.getElementById("child")
+    grand.addEventListener("click", function(){alert("grand")})
+    parent.addEventListener("click", function(){alert("parent")})
+    child.addEventListener("click", function(ev){
+      //전파중지
+      ev.stopPropagation();
+      alert("child");
+    })
+  </script>
+</body>
+</html>

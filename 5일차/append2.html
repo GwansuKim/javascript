@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>append2</title>
+  <style>
+    div{
+      padding: 10px; margin: 5px;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <div id="apple" class="ele">사과</div>
+  <div id="banana" class="ele">바나나</div>
+  <div id="kiwi" class="ele">키위</div>
+
+  <div id="basket"></div>
+  <div id="template" style="display:none">
+    <div class="fruit" title="사과"><span>사과</span></div>
+  </div>
+  <script>
+    let ele = document.getElementsByClassName("ele")
+    for( let i = 0; i < ele.length; i++){
+      ele[i].onclick = () => {
+        /* let newNode = '<div class="fuit" title="사과" id="apple"><sapn>사과</span></div>'
+        basket.innerHTML += newNode; */
+        let content = event.target.innerText;
+        let div = template.querySelector(".fruit").cloneNode(true);
+        div.title = content;
+        div.querySelector("span").innerText = content;
+        div.onclick = () =>{
+          div.remove();
+        }
+        basket.append(div);
+      }
+    }
+  </script>
+</body>
+</html>

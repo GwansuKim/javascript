@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>event</title>
+</head>
+
+<body>
+  <h3>addEventListener() 연습</h3>
+  <button id="btn">마우스클릭</button>
+  <script>
+    //타겟                  //타입     //수신기(=핸들러)   //옵션
+    window.addEventListener("click", ()=> alert("click") , {once:true} );
+  </script>
+</body>
+
+</html>

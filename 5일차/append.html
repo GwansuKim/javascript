@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>append</title>
+  <style>
+    div{
+      padding: 10px; margin: 5px;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <div id="apple">사과</div>
+  <div id="banana">바나나</div>
+  <div id="kiwi">키위</div>
+
+  <div id="basket"></div>
+  <script>
+    apple.onclick = function(){
+      let div = document.createElement("div");        //createElement, innerText, append
+      let span = document.createElement("span");
+      span.innerText = '사과'
+      div.append(span);
+      basket.append(div);
+      div.onclick = function(){
+        event.target.remove();
+      }
+    }
+    banana.onclick = function(){
+      let div = document.createElement("div");      //createElement, innerText, append
+      let span = document.createElement("span");
+      span.innerText = '바나나'
+      div.append(span);
+      basket.append(div);
+      div.onclick = function(){
+        event.target.remove();
+      }
+    }
+    kiwi.onclick = function(){
+      let div = document.createElement("div");        //createElement, innerText, append
+      let span = document.createElement("span");
+      span.innerText = '키위'
+      div.append(span);
+      basket.append (div);
+      div.onclick = function(){
+        event.target.remove();
+      }
+    }
+  </script>
+</body>
+</html>

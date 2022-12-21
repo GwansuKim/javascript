@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>eventgroup</title>
+  <style>
+    div {
+      padding: 10px;
+      margin: 5px;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="apple" class="ele">사과</div>
+  <div id="banana" class="ele">바나나</div>
+  <div id="kiwi" class="ele">키위</div>
+
+  <div id="basket"></div>
+  <div id="template" style="display:none">
+    <div class="fruit" title="사과"><span>사과</span></div>
+  </div>
+  <script>
+    document.body.addEventListener("click", function (ev) {
+      if ( ! ev.target.classList.contains("ele") ) {
+        //이벤트 타겟의 클래스 리스트에 'ele'가 있지 않다면
+        return;
+        //함수를 중단하고 시작점으로 돌아가라
+      }
+      let content = event.target.innerText;
+      let div = `<div class="fruit" title="${content}"><span>${content}</span></div>`
+      basket.innerHTML += div;
+    })
+
+    basket.addEventListener("click", function(ev){
+      if( ev.target.classList.contains("fruit")){
+        //이벤트 타겟의 클래스 리스트에 'fruit'이 있다면 
+        ev.target.remove();
+        //이벤트 타겟을 지워라(fruit이 클래스인 타겟)
+      } else if( ev.target.nodeName == "SPAN"){
+        //위 조건이 아니고 이벤트 타겟의 노드이름이 'SPAN'이라면
+        ev.target.parentNode.remove();
+        //이벤트 타겟의 부모노드를 지워라(SPAN의 부모노드)
+      }
+    })
+  </script>
+</body>
+
+</html>

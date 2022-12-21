@@ -23,7 +23,7 @@
                 let opt = document.querySelectorAll("#subject option:checked");
                 let sub = [];
                 for (let i = 0; i < opt.length; i++) {
-                    sub.push(opt[i].value);
+                    sub.push(opt[i].textContent);
                 }
                 result.innerHTML = `
                     선택과목 수 : ${sub.length}

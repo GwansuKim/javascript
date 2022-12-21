@@ -17,17 +17,17 @@
   <script>
     left.ondblclick = function(ev){
       let option = ev.target;
-      console.log(option.innerText)    //option
+      //console.log(option.innerText)    //option
       left.removeChild(ev.target)      //=ev.target.remove()
       //태그생성해서 right append
       document.getElementById("right").appendChild(ev.target);
     }
     right.ondblclick = function(ev){
       let option = ev.target;
-      console.log(option.innerText)    //option
+      //console.log(option.innerText)    //option
       right.removeChild(ev.target)      //=ev.target.remove()
       //태그생성해서 right append
-      document.getElementById("left").appendChild(ev.target);
+      left.appendChild(ev.target);
     }
   </script>
 </body>
