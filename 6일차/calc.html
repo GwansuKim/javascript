@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>calc</title>
+</head>
+<body>
+  <button id="btnReset">문제제출</button>
+  <input type="text" id="num1"> +
+  <input type="text" id="num2"> =
+  <input type="text" id="num3">
+  <button id="btn">결과확인</button>
+  <script>
+    btnReset.addEventListener("click",function(ev){
+      num1.value = Math.round(Math.random()*9)+1
+      num2.value = Math.round(Math.random()*9)+1
+      num3.value = ""
+    })
+    btn.addEventListener("click",function(ev){
+      if(parseInt(num1.value)+parseInt(num2.value) == num3.value){
+        alert("정답입니다");
+      } else if(num3.value != ""){
+        alert("틀렸습니다")
+      } else{
+        alert("답을 입력해 주세요")
+      }
+    })
+  </script>
+</body>
+</html>

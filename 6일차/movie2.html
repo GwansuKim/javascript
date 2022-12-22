@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>movie2</title>
+  <style>
+    span {
+      display: block;
+      text-align: center;
+    }
+
+    .no {
+      color: red;
+    }
+
+    .title {
+      font-size: 24px;
+      color: blue;
+    }
+
+    .movieCd {
+      font-style: italic;
+    }
+  </style>
+</head>
+
+<body>
+  <h3>영화정보</h3>
+  <div id="result">
+    <div id="template" style="display: none;">
+      <div>
+        <span class="no">${mvlist[i].rnum}</span>
+        <span class="title">${mvlist[i].movieNm}</span>
+        <span class="movieCd">${mvlist[i].movieCd}</span>
+      </div>
+    </div>
+  </div>
+  <script src="movie.js"></script>
+  <script>
+    let mvlist = movies.boxOfficeResult.dailyBoxOfficeList
+    for (let i = 0; i < mvlist.length; i++) {
+      /*  let mvinfo = `
+       <div>
+         <span class="no">${mvlist[i].rnum}</span>
+         <span class="title">${mvlist[i].movieNm}</span>
+         <span class="movieCd">${mvlist[i].movieCd}</span>
+       </div>`
+       result.innerHTML += mvinfo + "<br>"; */
+      let mvinfo = template.children[0].cloneNode(true);
+      mvinfo.querySelector('.no').innerText = mvlist[i].rnum
+      mvinfo.querySelector('.title').innerText = mvlist[i].movieNm
+      mvinfo.querySelector('.movieCd').innerText = mvlist[i].movieCd
+      mvinfo.innerHTML += "<BR>"
+      result.append(mvinfo);
+    }
+  </script>
+</body>
+
+</html>

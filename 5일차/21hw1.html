@@ -18,9 +18,10 @@
     .container {
       padding: 2px 16px;
     }
-    #body{
+
+    #body {
       display: grid;
-      grid-template-columns: repeat(2, 800px);
+      grid-template-columns: repeat(auto-fit, 800px);
       grid-gap: 20px;
     }
   </style>
@@ -30,46 +31,37 @@
 
   <h2>Card</h2>
   <div id="body">
-    <div class="card">
-      <img src="/3일차/img/이종석.jpg" alt="Avatar" style="width:100%">
+    <div class="card" style="display: none;">
+      <img src="/3일차/img/이종석.jpg" style="width:100%">
       <div class="container">
-        <h4><b>John Doe</b></h4>
-        <p>Architect & Engineer</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="/3일차/img/이종석.jpg" alt="Avatar" style="width:100%">
-      <div class="container">
-        <h4><b>John Doe</b></h4>
-        <p>Architect & Engineer</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="/3일차/img/이종석.jpg" alt="Avatar" style="width:100%">
-      <div class="container">
-        <h4><b>John Doe</b></h4>
-        <p>Architect & Engineer</p>
+        <h4><b>asfd</b></h4>
+        <p>asdf</p>
       </div>
     </div>
   </div>
   <script>
     let persons = [
-      {name:'kim', skill:'Architect % Engineer', img:'/3일차/img/이종석.jpg'},
-      {name:'park' ,skill:'deginner', img:'/3일차/img/이종석.jpg'},
-      {name:'lee' ,skill:'programer', img:'/3일차/img/이종석.jpg'}
+      { name: 'kim', skill: 'Architect & Engineer', img: '/3일차/img/이종석.jpg' },
+      { name: 'park', skill: 'deginner', img: '/3일차/img/이종석.jpg' },
+      { name: 'lee', skill: 'programer', img: '/3일차/img/이종석.jpg' }
     ]
-    for( let i = 0; i < persons.length; i++){
+   /*  for (let i = 0; i < persons.length; i++) {
       let newNode = document.createElement("div");
       newNode.className = "card"
-      let a;
-      a.innerHTML = `<img src="${persons[i].img}" style="width:100%">
-      <div class="container">
-        <h4><b>${persons[i].name}</b></h4>
-        <p>${persons[i].skill}</p>
-      </div>`
-      newNode.append(a);
+      newNode.innerHTML = `<img src="${persons[i].img}" style="width:100%">
+                    <div class="container">
+                    <h4><b>${persons[i].name}</b></h4>
+                    <p>${persons[i].skill}</p>
+                    </div>`
+      document.getElementById('body').append(newNode)
+    } */
+    for (let i = 0; i < persons.length; i++) {
+      let newNode = document.querySelectorAll(".card")[0].cloneNode(true);
+      newNode.style = "display:block";
+      newNode.querySelectorAll("img")[0].src = persons[i].img
+      newNode.querySelectorAll("b")[0].innerText = persons[i].name
+      newNode.querySelectorAll("p")[0].innerText = persons[i].skill
+      document.getElementById('body').append(newNode);
     }
   </script>
 </body>

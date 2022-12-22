@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>traverse</title>
+</head>
+<body>
+  <table>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td><button>조회</button></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>4</td>
+      <td><button>조회</button></td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>6</td>
+      <td><button>조회</button></td>
+    </tr>
+  </table>
+  <script>
+    document.querySelector("table").addEventListener("click", function(ev){
+      if( ev.target.nodeName == "BUTTON" ){
+        let tds = ev.target.closest("tr").children;
+        console.log(tds[0].innerText);
+        console.log(tds[1].innerText);
+
+        let td = ev.target.parentElement.previousElementSibling;
+        let td2 = td.previousElementSibling;
+        console.log(td2.innerText);
+        console.log(td.innerText);
+      }
+      //버튼을 클릭헀으면 해당 버튼의 td태그의 내용을 조회
+    })
+  </script>
+</body>
+</html>

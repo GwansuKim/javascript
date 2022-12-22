@@ -28,9 +28,16 @@
         /* let newNode = '<div class="fuit" title="사과" id="apple"><sapn>사과</span></div>'
         basket.innerHTML += newNode; */
         let content = event.target.innerText;
-        let div = `<div class="fruit" title="${content}"><span>${content}</span></div>`
+        let div = `<div class="fruit" title="${content}"><span>${content}<button>삭제</button></span></div>`
         basket.innerHTML += div;
       }
+
+      basket.addEventListener("click", function(ev){
+        let node = ev.target;
+        if(node.nodeName == "BUTTON"){
+          node.closest("div").remove();
+        }
+      })
     }
   </script>
 </body>
