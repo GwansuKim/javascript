@@ -1,46 +1,46 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>xhr</title>
-</head>
-<body>
-  <h3>서버에서 데이터 가져오기</h3>
-  <table style="border: 1px solid #000;">
-    <colgroup></colgroup>
-    <tr style="display: none;">
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-  </table>
-  <script>
-    //url, 응답처리만 달라짐
-    //1. xhr객체 생성
-    let xhr = new XMLHttpRequest();
-    //2. 콜백함수
-    xhr.onload = callback;
-    //3. 요청연결
-    let url = 'https://jsonplaceholder.typicode.com/posts'
-    xhr.open('get', url);
-    //4. 요청전달
-    xhr.send();
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>xhr</title>
+  </head>
+  <body>
+    <h3>서버에서 데이터 가져오기</h3>
+    <table style="border: 1px solid #000">
+      <colgroup></colgroup>
+      <tr style="display: none">
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+    <script>
+      //url, 응답처리만 달라짐
+      //1. xhr객체 생성
+      let xhr = new XMLHttpRequest();
+      //2. 콜백함수
+      xhr.onload = callback;
+      //3. 요청연결
+      let url = "https://jsonplaceholder.typicode.com/posts";
+      xhr.open("get", url);
+      //4. 요청전달
+      xhr.send();
 
-    function callback(){
-      let = obj =  JSON.parse(xhr.response)
-      for( let i = 0; i < obj.length; i++){
-        let tr = document.querySelectorAll("tr")[0].cloneNode(true);
-        tr.style = 'display : block'
-        tr.querySelectorAll("td")[0].innerText = obj[i].userId
-        tr.querySelectorAll("td")[1].innerText = obj[i].id
-        tr.querySelectorAll("td")[2].innerText = obj[i].title
-        tr.querySelectorAll("td")[3].innerText = obj[i].body
-        document.querySelector('tbody').append(tr);
+      function callback() {
+        let obj = JSON.parse(xhr.response);
+        for (let i = 0; i < obj.length; i++) {
+          let tr = document.querySelectorAll("tr")[0].cloneNode(true);
+          tr.style = "display : block";
+          tr.querySelectorAll("td")[0].innerText = obj[i].userId;
+          tr.querySelectorAll("td")[1].innerText = obj[i].id;
+          tr.querySelectorAll("td")[2].innerText = obj[i].title;
+          tr.querySelectorAll("td")[3].innerText = obj[i].body;
+          document.querySelector("tbody").append(tr);
+        }
       }
-    }
-  </script>
-</body>
+    </script>
+  </body>
 </html>
