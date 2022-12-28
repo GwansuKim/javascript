@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>restParameter</title>
+  </head>
+  <body>
+    <h3>rest parameter test</h3>
+    <script>
+      function sum(x1, x2) {
+        let y = x1 + x2;
+        return y;
+      }
+
+      function sumrest(...arr) {
+        let y = 0;
+        for (let i = 0; i < arr.length; i++) {
+          y += arr[i];
+        }
+        return y;
+      }
+      console.log(sumrest(5, 7));
+      console.log(sumrest(5, 7, 8));
+      console.log(sumrest(5, 7, 8, 10));
+      const num = [1, 2, 3, 4, 5, 6, 7];
+      console.log(sumrest(...num));
+    </script>
+  </body>
+</html>
